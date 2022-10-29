@@ -1,0 +1,32 @@
+<?
+$aMenuLinks = Array(
+	Array(
+		"buy", 
+		"/properties/buy.php", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"lent", 
+		"/properties/lent.php", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"lease", 
+		"/properties/lease.php", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"menu", 
+		"/properties/menu/", 
+		Array(), 
+		Array(), 
+		"" 
+	)
+);
+?>

@@ -1,9 +1,10 @@
-<?if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die(); ?>
+<?if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();
+IncludeTemplateLangFile(__FILE__);
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <title>HomeSpace &mdash; Colorlib Website Template</title>
-
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito+Sans:200,300,400,700,900|Roboto+Mono:300,400,500">
@@ -24,6 +25,7 @@
 
 </head>
 <body>
+<?$APPLICATION->ShowHead();?>
 <?$APPLICATION->ShowPanel()?>
 <div class="site-loader"></div>
 
@@ -84,6 +86,7 @@
         </div>
 
     </div>
+
     <div class="site-navbar">
         <div class="container py-1">
             <div class="row align-items-center">
@@ -95,35 +98,27 @@
 
                         <div class="d-inline-block d-lg-none ml-md-0 mr-auto py-3"><a href="#" class="site-menu-toggle js-menu-toggle text-black"><span class="icon-menu h3"></span></a></div>
 
-                        <ul class="site-menu js-clone-nav d-none d-lg-block">
-                            <li class="active">
-                                <a href="index.html">Home</a>
-                            </li>
-                            <li class="has-children">
-                                <a href="properties.html">Properties</a>
-                                <ul class="dropdown">
-                                    <li><a href="#">Buy</a></li>
-                                    <li><a href="#">Rent</a></li>
-                                    <li><a href="#">Lease</a></li>
-                                    <li class="has-children">
-                                        <a href="#">Menu</a>
-                                        <ul class="dropdown">
-                                            <li><a href="#">Menu One</a></li>
-                                            <li><a href="#">Menu Two</a></li>
-                                            <li><a href="#">Menu Three</a></li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li><a href="blog.html">Blog</a></li>
-                            <li><a href="about.html">About</a></li>
-                            <li><a href="contact.html">Contact</a></li>
-                        </ul>
+                        <?$APPLICATION->IncludeComponent("bitrix:menu", "top_menu", Array(
+                            "ALLOW_MULTI_SELECT" => "N",	// Разрешить несколько активных пунктов одновременно
+                            "CHILD_MENU_TYPE" => "left",	// Тип меню для остальных уровней
+                            "DELAY" => "N",	// Откладывать выполнение шаблона меню
+                            "MAX_LEVEL" => "3",	// Уровень вложенности меню
+                            "MENU_CACHE_GET_VARS" => "",	// Значимые переменные запроса
+                            "MENU_CACHE_TIME" => "3600",	// Время кеширования (сек.)
+                            "MENU_CACHE_TYPE" => "N",	// Тип кеширования
+                            "MENU_CACHE_USE_GROUPS" => "Y",	// Учитывать права доступа
+                            "ROOT_MENU_TYPE" => "for",	// Тип меню для первого уровня
+                            "USE_EXT" => "N",	// Подключать файлы с именами вида .тип_меню.menu_ext.php
+                            "COMPONENT_TEMPLATE" => "horizontal_multilevel"
+                        ),
+                            false
+                        );?>
+
                     </nav>
                 </div>
-
-
             </div>
         </div>
     </div>
+
+
 </div>
