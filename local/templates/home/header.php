@@ -29,6 +29,23 @@ IncludeTemplateLangFile(__FILE__);
 <?$APPLICATION->ShowPanel()?>
 <div class="site-loader"></div>
 
+
+
+<?if($APPLICATION->GetCurPage()!='/'):?>
+                    <?
+                    $APPLICATION->IncludeComponent(
+                        "bitrix:breadcrumb",
+                        "breadcrumbs",
+                        array(
+                            "PATH" => "",
+                            "SITE_ID" => "s1",
+                            "START_FROM" => "0",
+                            "COMPONENT_TEMPLATE" => "breadcrumbs"
+                        ),
+                        false
+                    );?>
+<?endif;?>
+
 <div class="site-wrap">
 
     <div class="site-mobile-menu">
@@ -91,7 +108,7 @@ IncludeTemplateLangFile(__FILE__);
         <div class="container py-1">
             <div class="row align-items-center">
                 <div class="col-8 col-md-8 col-lg-4">
-                    <h1 class=""><a href="index.html" class="h5 text-uppercase text-black"><strong>HomeSpace<span class="text-danger">.</span></strong></a></h1>
+                    <h1 class=""><a href="/" class="h5 text-uppercase text-black"><strong>HomeSpace<span class="text-danger">.</span></strong></a></h1>
                 </div>
                 <div class="col-4 col-md-4 col-lg-8">
                     <nav class="site-navigation text-right text-md-right" role="navigation">

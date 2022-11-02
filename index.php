@@ -82,7 +82,7 @@ $APPLICATION->SetTitle("Мебельная компания");
 		"AREA_FILE_SHOW" => "file",
 		"AREA_FILE_SUFFIX" => "inc",
 		"EDIT_TEMPLATE" => "",
-		"PATH" => "/include/wide_range.php.php"
+		"PATH" => "/include/wide_range.php"
 	)
 );?> <?$APPLICATION->IncludeComponent(
 	"bitrix:main.include",
@@ -336,18 +336,6 @@ $APPLICATION->SetTitle("Мебельная компания");
 		"COMPONENT_TEMPLATE" => "agent"
 	),
 	false
-);?><br>
- <br>
- <br>
- 3) включаемая область<br>
- <?$APPLICATION->IncludeComponent(
-	"bitrix:main.include",
-	"",
-	Array(
-		"AREA_FILE_SHOW" => "page",
-		"AREA_FILE_SUFFIX" => "inc",
-		"EDIT_TEMPLATE" => ""
-	)
-);?><br>
+);?>
 <p>
 </p><?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>

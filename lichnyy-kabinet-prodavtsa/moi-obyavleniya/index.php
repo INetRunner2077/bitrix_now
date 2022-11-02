@@ -1,7 +1,7 @@
 <?
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 $APPLICATION->SetTitle("Мои обьявления");
-?>Мои обьявления<br>
+?>
 <?
 global $USER;
 $usid = $USER->GetID();
@@ -11,9 +11,9 @@ $GLOBALS['arrFilter'] = array("CREATED_USER_ID"=>$usid);
 
 <?
 $APPLICATION->IncludeComponent(
-	"bitrix:news",
-	"",
-	Array(
+	"bitrix:news", 
+	"my_ads", 
+	array(
 		"ADD_ELEMENT_CHAIN" => "N",
 		"ADD_SECTIONS_CHAIN" => "Y",
 		"AJAX_MODE" => "N",
@@ -30,25 +30,73 @@ $APPLICATION->IncludeComponent(
 		"DETAIL_ACTIVE_DATE_FORMAT" => "d.m.Y",
 		"DETAIL_DISPLAY_BOTTOM_PAGER" => "Y",
 		"DETAIL_DISPLAY_TOP_PAGER" => "N",
-		"DETAIL_FIELD_CODE" => array("CREATED_BY",""),
+		"DETAIL_FIELD_CODE" => array(
+			0 => "DATE_CREATE",
+			1 => "CREATED_BY",
+			2 => "CREATED_USER_NAME",
+			3 => "TIMESTAMP_X",
+			4 => "MODIFIED_BY",
+			5 => "USER_NAME",
+			6 => "",
+		),
 		"DETAIL_PAGER_SHOW_ALL" => "Y",
 		"DETAIL_PAGER_TEMPLATE" => "",
 		"DETAIL_PAGER_TITLE" => "Страница",
-		"DETAIL_PROPERTY_CODE" => array("",""),
+		"DETAIL_PROPERTY_CODE" => array(
+			0 => "BATHS",
+			1 => "BEDS",
+			2 => "GARAGE",
+			3 => "AREA",
+			4 => "priority",
+			5 => "PRICE",
+			6 => "GALLERY",
+			7 => "",
+		),
 		"DETAIL_SET_CANONICAL_URL" => "N",
 		"DISPLAY_BOTTOM_PAGER" => "Y",
 		"DISPLAY_NAME" => "Y",
 		"DISPLAY_TOP_PAGER" => "N",
-		"FILTER_FIELD_CODE" => array("CREATED_BY",""),
+		"FILTER_FIELD_CODE" => array(
+			0 => "CREATED_BY",
+			1 => "CREATED_USER_NAME",
+			2 => "TIMESTAMP_X",
+			3 => "MODIFIED_BY",
+			4 => "USER_NAME",
+			5 => "",
+		),
 		"FILTER_NAME" => "arrFilter",
-		"FILTER_PROPERTY_CODE" => array("",""),
+		"FILTER_PROPERTY_CODE" => array(
+			0 => "",
+			1 => "BATHS",
+			2 => "BEDS",
+			3 => "GARAGE",
+			4 => "AREA",
+			5 => "priority",
+			6 => "PRICE",
+			7 => "",
+		),
 		"HIDE_LINK_WHEN_NO_DETAIL" => "N",
 		"IBLOCK_ID" => "5",
 		"IBLOCK_TYPE" => "Ads",
-		"INCLUDE_IBLOCK_INTO_CHAIN" => "Y",
+		"INCLUDE_IBLOCK_INTO_CHAIN" => "N",
 		"LIST_ACTIVE_DATE_FORMAT" => "d.m.Y",
-		"LIST_FIELD_CODE" => array("CREATED_BY",""),
-		"LIST_PROPERTY_CODE" => array("",""),
+		"LIST_FIELD_CODE" => array(
+			0 => "CREATED_BY",
+			1 => "CREATED_USER_NAME",
+			2 => "TIMESTAMP_X",
+			3 => "MODIFIED_BY",
+			4 => "USER_NAME",
+			5 => "",
+		),
+		"LIST_PROPERTY_CODE" => array(
+			0 => "BATHS",
+			1 => "BEDS",
+			2 => "GARAGE",
+			3 => "AREA",
+			4 => "priority",
+			5 => "PRICE",
+			6 => "",
+		),
 		"MESSAGE_404" => "",
 		"META_DESCRIPTION" => "-",
 		"META_KEYWORDS" => "-",
@@ -72,12 +120,21 @@ $APPLICATION->IncludeComponent(
 		"SORT_ORDER2" => "ASC",
 		"STRICT_SECTION_CHECK" => "N",
 		"USE_CATEGORIES" => "N",
-		"USE_FILTER" => "Y",
+		"USE_FILTER" => "N",
 		"USE_PERMISSIONS" => "N",
 		"USE_RATING" => "N",
 		"USE_REVIEW" => "N",
 		"USE_RSS" => "N",
 		"USE_SEARCH" => "N",
-		"VARIABLE_ALIASES" => Array("ELEMENT_ID"=>"ELEMENT_ID","SECTION_ID"=>"SECTION_ID")
-	)
+		"COMPONENT_TEMPLATE" => "my_ads",
+		"DISPLAY_DATE" => "Y",
+		"DISPLAY_PICTURE" => "Y",
+		"DISPLAY_PREVIEW_TEXT" => "Y",
+		"USE_SHARE" => "N",
+		"VARIABLE_ALIASES" => array(
+			"SECTION_ID" => "SECTION_ID",
+			"ELEMENT_ID" => "ELEMENT_ID",
+		)
+	),
+	false
 );?><?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>

@@ -20,7 +20,6 @@ $this->setFrameMode(true);
 		<small id="<?=$this->GetEditAreaId($arItem['ID']);?>"><span class="news-date-time"><?echo $arItem["DISPLAY_ACTIVE_FROM"]?>&nbsp;&nbsp;</span><a href="<?echo $arItem["DETAIL_PAGE_URL"]?>"><?echo $arItem["NAME"]?></a><br /></small>
 	<?endforeach;*/?>
 
-
 <div class="site-section site-section-sm bg-light">
     <div class="container">
         <div class="row mb-5">
@@ -31,16 +30,17 @@ $this->setFrameMode(true);
             </div>
         </div>
         <div class="row mb-5">
-        <?foreach($arResult["ITEMS"] as $arItem):?>
+            <?foreach($arResult["ITEMS"] as $arItem):?>
             <div class="col-md-6 col-lg-4 mb-4">
-                <a href="<?=$arItem["DETAIL_PAGE_URL"]?>" class="prop-entry d-block"> <figure> <img alt="Image" src="<?=$arItem["PREVIEW_PICTURE"]["SRC"]?>" class="img-fluid"> </figure>
+                <a href="<?=$arItem["DETAIL_PAGE_URL"]?>" class="prop-entry d-block">
+                    <figure>
+                        <img src="<?=$arItem["PREVIEW_PICTURE"]["SRC"]?>" alt="Image" class="img-fluid">
+                    </figure>
                     <div class="prop-text">
                         <div class="inner">
                             <span class="price rounded"><?=$arItem['PROPERTY_PRICE_VALUE'];?></span>
                             <h3 class="title"><?=$arItem["NAME"] ?></h3>
-                            <p class="location">
-                                Воронеж
-                            </p>
+                            <p class="location">Воронеж</p>
                         </div>
                         <div class="prop-more-info">
                             <div class="inner d-flex">
@@ -61,7 +61,8 @@ $this->setFrameMode(true);
                     </div>
                 </a>
             </div>
-            <?endforeach;?>
+             <? endforeach; ?>
         </div>
+
     </div>
 </div>

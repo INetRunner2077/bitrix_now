@@ -1,7 +1,7 @@
 <?
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 $APPLICATION->SetTitle("О сервисе");
-?>1)&nbsp;блок с информацией<br>
+?>
  <?$APPLICATION->IncludeComponent(
 	"bitrix:main.include",
 	"",
