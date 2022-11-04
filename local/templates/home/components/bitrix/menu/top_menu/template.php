@@ -10,7 +10,10 @@
         <?=str_repeat("</ul></li>", ($previousLevel - $arItem["DEPTH_LEVEL"]));?>
     <?endif?>
 
+
     <?if ($arItem["IS_PARENT"]):?>
+
+    <?if ($arItem["PERMISSION"] > "D"):?>
 
     <?if ($arItem["DEPTH_LEVEL"] == 1):?>
     <li class="has-children" class="<?if ($arItem["SELECTED"]):?>active <?endif?>" >
@@ -21,7 +24,11 @@
                 <ul class = "dropdown">
                     <?endif?>
 
+                    <? endif; ?>
+
                     <?else:?>
+
+
 
                         <?if ($arItem["PERMISSION"] > "D"):?>
 

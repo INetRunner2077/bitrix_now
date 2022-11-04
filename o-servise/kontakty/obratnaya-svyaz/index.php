@@ -1,14 +1,42 @@
 <?
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
-$APPLICATION->SetTitle("Обратная связь");
-?><?$APPLICATION->IncludeComponent(
-	"bitrix:main.feedback",
+$APPLICATION->SetTitle("");?>
+    <div class="site-section">
+	<div class="container">
+		<div class="row">
+
+            <?$APPLICATION->IncludeComponent(
+	"bitrix:main.feedback", 
+	"feedback", 
+	array(
+		"EMAIL_TO" => "danildro1999@gmail.com",
+		"EVENT_MESSAGE_ID" => array(
+			0 => "7",
+		),
+		"OK_TEXT" => "Спасибо, ваше сообщение принято.",
+		"REQUIRED_FIELDS" => array(
+			0 => "NONE",
+			1 => "NAME",
+			2 => "EMAIL",
+			3 => "MESSAGE",
+		),
+		"USE_CAPTCHA" => "N",
+		"COMPONENT_TEMPLATE" => "feedback"
+	),
+	false
+);?>
+
+			 <?$APPLICATION->IncludeComponent(
+	"bitrix:main.include",
 	"",
 	Array(
-		"EMAIL_TO" => "mcart2@mail.ru",
-		"EVENT_MESSAGE_ID" => array(),
-		"OK_TEXT" => "Спасибо, ваше сообщение принято.",
-		"REQUIRED_FIELDS" => array(),
-		"USE_CAPTCHA" => "Y"
+		"AREA_FILE_SHOW" => "page",
+		"AREA_FILE_SUFFIX" => "inc",
+		"EDIT_TEMPLATE" => ""
 	)
-);?><?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
+);?>
+		</div>
+	</div>
+</div>
+
+<?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
