@@ -25,9 +25,10 @@ if (!empty($arResult['NavQueryString'])) {
     <div class="col-md-12 text-center">
         <div class="site-pagination">
 
-
+    <? $mass = array(); ?>
     <?php for ($i = $arResult['nStartPage']; $i <= $arResult['nEndPage']; $i++): ?>
         <?php
+
         // ссылка на очередную страницу
         $pageUrl = $arResult['sUrlPath'];
         if (!empty($arResult['NavQueryString'])) {
@@ -35,6 +36,7 @@ if (!empty($arResult['NavQueryString'])) {
         } else {
             $pageUrl = $pageUrl.'?PAGEN_'.$arResult['NavNum'].'='.$i;
         }
+        $mass[] = $i;
         ?>
         <?php if ($arResult['NavPageNomer'] == $i): /* если это текущая страница */ ?>
 
@@ -46,7 +48,20 @@ if (!empty($arResult['NavQueryString'])) {
         <?php endif; ?>
     <?php endfor; ?>
 
-            <? if($arResult['NavPageNomer'] != $arResult['NavPageCount']): ?>
+
+            <?
+            $href = true;
+            foreach ($mass as $key => $value) {
+
+             if( $value == $arResult['NavPageCount'])
+             {
+                 $href = false;
+             }
+
+            }
+                ?>
+
+            <? if($arResult['NavPageNomer'] != $arResult['NavPageCount'] && $href ): ?>
             <?php if ($arResult['NavPageNomer'] < $arResult['NavPageCount']): /* ссылка на последнюю страницу */ ?>
                 <span>...</span>
                     <a href="<?= $lastPageUrl; ?>" title="Последняя"><?=$arResult['NavPageCount']?></a>
