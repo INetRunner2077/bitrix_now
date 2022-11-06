@@ -15,8 +15,7 @@
  * @param CBitrixComponentTemplate $this
  */
 
-if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)
-	die();
+if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true) die();
 
 if($arResult["SHOW_SMS_FIELD"] == true)
 {
@@ -205,7 +204,7 @@ if ($arResult["USE_CAPTCHA"] == "Y")
 
 <p><?echo $arResult["GROUP_POLICY"]["PASSWORD_REQUIREMENTS"];?></p>
 
-<?endif //$arResult["SHOW_SMS_FIELD"] == true ?>
+<?endif ?>
 
 <p><span class="starrequired">*</span><?=GetMessage("AUTH_REQ")?></p>
 

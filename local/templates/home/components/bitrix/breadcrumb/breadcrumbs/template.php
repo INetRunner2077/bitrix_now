@@ -27,7 +27,6 @@ $result = '<div class="site-blocks-cover inner-page-cover overlay" style="backgr
     </div>
 </div>';
 
-//return $result;
 return $result;
 
 

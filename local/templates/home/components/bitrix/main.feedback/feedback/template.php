@@ -10,7 +10,6 @@ if(!defined("B_PROLOG_INCLUDED")||B_PROLOG_INCLUDED!==true)die();
  * @global CUser $USER
  */
 ?>
-
             <div class="col-md-12 col-lg-8 mb-5">
                 <?if(!empty($arResult["ERROR_MESSAGE"]))
                 {

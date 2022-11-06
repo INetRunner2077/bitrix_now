@@ -1,7 +1,4 @@
 <?php
-/*
- * Файл local/templates/.default/components/bitrix/system.pagenavigation/pager/template.php
- */
 if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED!==true) die();
 
 $this->setFrameMode(true);
@@ -48,18 +45,15 @@ if (!empty($arResult['NavQueryString'])) {
         <?php endif; ?>
     <?php endfor; ?>
 
-
             <?
             $href = true;
             foreach ($mass as $key => $value) {
 
-             if( $value == $arResult['NavPageCount'])
-             {
+             if( $value == $arResult['NavPageCount']) {
                  $href = false;
              }
-
-            }
-                ?>
+             }
+            ?>
 
             <? if($arResult['NavPageNomer'] != $arResult['NavPageCount'] && $href ): ?>
             <?php if ($arResult['NavPageNomer'] < $arResult['NavPageCount']): /* ссылка на последнюю страницу */ ?>

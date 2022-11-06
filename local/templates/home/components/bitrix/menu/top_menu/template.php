@@ -28,8 +28,6 @@
 
                     <?else:?>
 
-
-
                         <?if ($arItem["PERMISSION"] > "D"):?>
 
                             <?if ($arItem["DEPTH_LEVEL"] == 1):?>
@@ -46,7 +44,7 @@
 
                     <?endforeach?>
 
-                    <?if ($previousLevel > 1)://close last item tags?>
+                    <?if ($previousLevel > 1):?>
                         <?=str_repeat("</ul></li>", ($previousLevel-1) );?>
                     <?endif?>
 

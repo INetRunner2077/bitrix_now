@@ -6,16 +6,13 @@ CJSCore::Init();
 <div class="site-section">
     <div class="container">
         <div class="row">
-
             <div class="col-md-12 col-lg-8 mb-5">
-
 <?
 if ($arResult['SHOW_ERRORS'] == 'Y' && $arResult['ERROR'])
 	ShowMessage($arResult['ERROR_MESSAGE']);
 ?>
 
 <?if($arResult["FORM_TYPE"] == "login"):?>
-
 
 <form name="system_auth_form<?=$arResult["RND"]?>" class="p-5 bg-white border" method="post" target="_top" action="<?=$arResult["AUTH_URL"]?>">
 <?if($arResult["BACKURL"] <> ''):?>
@@ -33,8 +30,6 @@ if ($arResult['SHOW_ERRORS'] == 'Y' && $arResult['ERROR'])
             <input type="text" name="USER_LOGIN" id="fullname" class="form-control" placeholder="<?=GetMessage("AUTH_LOGIN")?>">
         </div>
     </div>
-
-
 			<script>
 				BX.ready(function() {
 					var loginCookie = BX.getCookie("<?=CUtil::JSEscape($arResult["~LOGIN_COOKIE_NAME"])?>");
@@ -47,14 +42,12 @@ if ($arResult['SHOW_ERRORS'] == 'Y' && $arResult['ERROR'])
 				});
 			</script>
 
-
     <div class="row form-group">
         <div class="col-md-12 mb-3 mb-md-0">
             <label class="font-weight-bold" for="fullname"><?=GetMessage("AUTH_PASSWORD")?></label>
             <input type="text" name="USER_PASSWORD" id="fullname" class="form-control" placeholder="<?=GetMessage("AUTH_PASSWORD")?>">
         </div>
     </div>
-
 
 <?if ($arResult["STORE_PASSWORD"] == "Y"):?>
 		<tr>
@@ -96,7 +89,6 @@ if ($arResult['SHOW_ERRORS'] == 'Y' && $arResult['ERROR'])
 <?
 else:
 ?>
-
 <form action="<?=$arResult["AUTH_URL"]?>">
 	<table width="95%">
 		<tr>

@@ -31,12 +31,23 @@ $this->setFrameMode(true);
             <div class="col-lg-8" style="margin-top: -150px;">
                 <div class="mb-5">
                     <div class="slide-one-item home-slider owl-carousel">
-                        <?foreach($arResult["DISPLAY_PROPERTIES"]['GALLERY']['FILE_VALUE'] as $pid=>$arProperty):?>
+                        <?  if($arResult["DISPLAY_PROPERTIES"]['GALLERY']['FILE_VALUE'] [1] == null && $arResult["DISPLAY_PROPERTIES"]['GALLERY']['FILE_VALUE'] ['SRC'] != null):?>
 
+                            <div><img src="<?=$arResult["DISPLAY_PROPERTIES"]['GALLERY']['FILE_VALUE'] ['SRC']?>" alt="Image" class="img-fluid"></div>
 
-                            <div><img src="<?=$arProperty['SRC']?>" alt="Image" class="img-fluid"></div>
+                        <? elseif($arResult["DISPLAY_PROPERTIES"]['GALLERY']['FILE_VALUE'] [1] != null):?>
 
-                        <? endforeach?>
+                            <?foreach($arResult["DISPLAY_PROPERTIES"]['GALLERY']['FILE_VALUE'] as $pid=>$arProperty):?>
+
+                                <div><img src="<?=$arProperty['SRC']?>" alt="Image" class="img-fluid"></div>
+
+                            <? endforeach?>
+
+                        <? else: ?>
+
+                            <div><img src="<?=$arResult["DETAIL_PICTURE"]["SRC"]?>" alt="Image" class="img-fluid"></div>
+
+                        <? endif; ?>
                     </div>
                 </div>
                 <div class="bg-white">
@@ -86,14 +97,67 @@ $this->setFrameMode(true);
                             <h2 class="h4 text-black mb-3">Property Gallery</h2>
                         </div>
 
-                        <?foreach($arResult["DISPLAY_PROPERTIES"]['GALLERY']['FILE_VALUE'] as $pid=>$arProperty):?>
+                        <?  if($arResult["DISPLAY_PROPERTIES"]['GALLERY']['FILE_VALUE'] [1] == null && $arResult["DISPLAY_PROPERTIES"]['GALLERY']['FILE_VALUE'] ['SRC'] != null): ?>
 
                             <div class="col-sm-6 col-md-4 col-lg-3 mb-4">
-                                <a href="<?=$arProperty['SRC']?>" class="image-popup gal-item"><img src="<?=$arProperty['SRC']?>" alt="Image" class="img-fluid"></a>
+                                <a href="<?=$arResult["DISPLAY_PROPERTIES"]['GALLERY']['FILE_VALUE'] ['SRC']?>" class="image-popup gal-item">
+                                    <img src="<?=$arResult["DISPLAY_PROPERTIES"]['GALLERY']['FILE_VALUE'] ['SRC']?>" alt="Image" class="img-fluid">
+                                </a>
+                            </div>
+
+                        <? elseif($arResult["DISPLAY_PROPERTIES"]['GALLERY']['FILE_VALUE'] [1] != null):?>
+
+                            <?foreach($arResult["DISPLAY_PROPERTIES"]['GALLERY']['FILE_VALUE'] as $pid=>$arProperty):?>
+
+                                <div class="col-sm-6 col-md-4 col-lg-3 mb-4">
+                                    <a href="<?=$arProperty['SRC']?>" class="image-popup gal-item">
+                                        <img src="<?=$arProperty['SRC']?>" alt="Image" class="img-fluid">
+                                    </a>
+                                </div>
+
+                            <? endforeach?>
+
+                        <? else: ?>
+
+                            <div class="col-sm-6 col-md-4 col-lg-3 mb-4">
+                                <a href="<?=$arResult["DETAIL_PICTURE"]["SRC"]?>" class="image-popup gal-item">
+                                    <img src="<?=$arResult["DETAIL_PICTURE"]["SRC"]?>" alt="Image" class="img-fluid">
+                                </a>
+                            </div>
+
+                        <? endif; ?>
+                    </div>
+
+                    <div class="row mt-5">
+                        <div class="col-12">
+                            <h2 class="h4 text-black mb-3">Дополнительные материалы</h2>
+                        </div>
+
+                        <?  if($arResult["DISPLAY_PROPERTIES"]['DOP']['FILE_VALUE'] [1] == null): ?>
+
+                            <div class="col-sm-6 col-md-4 col-lg-3 mb-4">
+                                <a href="<?=$arResult["DISPLAY_PROPERTIES"]['DOP']['FILE_VALUE'] ['SRC']?>" class="image-popup gal-item"><?=$arResult["DISPLAY_PROPERTIES"]['DOP']['FILE_VALUE'] ['ORIGINAL_NAME']?></a>
+                            </div>
+
+                        <? else:
+                            ?>
+
+                            <?foreach($arResult["DISPLAY_PROPERTIES"]['DOP']['FILE_VALUE'] as $pid=>$arProperty):?>
+
+                            <div class="col-sm-6 col-md-4 col-lg-3 mb-4">
+                                <a href="<?=$arProperty['SRC']?>"> <?=$arProperty['ORIGINAL_NAME']?> </a>
                             </div>
 
                         <? endforeach?>
+                        <? endif; ?>
                     </div>
+
+                    <h2 class="h4 text-black">Ссылки</h2>
+                    <?foreach($arResult["DISPLAY_PROPERTIES"]['LINK']['VALUE'] as $value):?>
+                        <p> <a href="<?=$value?>"> <?= $value ?> </a> </p>
+                    <? endforeach?>
+
+
                 </div>
             </div>
             <div class="col-lg-4 pl-md-5">
