@@ -4,9 +4,9 @@ $APPLICATION->SetTitle("Личный кабинет покупателя");
 ?><b style="color: #333333;">Личный кабинет покупателя<br>
  </b><br>
  <b style="color: #333333;"><?$APPLICATION->IncludeComponent(
-	"bitrix:blog.user",
-	"",
-	Array(
+	"bitrix:blog.user", 
+	".default", 
+	array(
 		"BLOG_VAR" => "",
 		"DATE_TIME_FORMAT" => "d.m.Y H:i:s",
 		"ID" => $id,
@@ -20,9 +20,12 @@ $APPLICATION->SetTitle("Личный кабинет покупателя");
 		"USER_CONSENT_ID" => "0",
 		"USER_CONSENT_IS_CHECKED" => "Y",
 		"USER_CONSENT_IS_LOADED" => "N",
-		"USER_PROPERTY" => array(),
-		"USER_VAR" => ""
-	)
+		"USER_PROPERTY" => array(
+		),
+		"USER_VAR" => "",
+		"COMPONENT_TEMPLATE" => ".default"
+	),
+	false
 );?>
  <b style="color: #333333;"><?$APPLICATION->IncludeComponent(
 	"bitrix:subscribe.form",
