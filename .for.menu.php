@@ -30,7 +30,7 @@ $aMenuLinks = Array(
 	),
 	Array(
 		"Новости", 
-		"login/", 
+		"/o-servise/novosti/", 
 		Array(), 
 		Array(), 
 		"" 
