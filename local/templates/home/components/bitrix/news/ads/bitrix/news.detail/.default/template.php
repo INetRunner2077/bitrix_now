@@ -128,6 +128,9 @@ $this->setFrameMode(true);
                         <? endif; ?>
                     </div>
 
+
+                    <? if($arResult["DISPLAY_PROPERTIES"]['DOP'] != null): ?>
+
                     <div class="row mt-5">
                         <div class="col-12">
                             <h2 class="h4 text-black mb-3">Дополнительные материалы</h2>
@@ -152,11 +155,17 @@ $this->setFrameMode(true);
                         <? endif; ?>
                     </div>
 
+                    <? endif; ?>
+
+
+                    <? if($arResult["DISPLAY_PROPERTIES"]['LINK'] != null): ?>
+
                     <h2 class="h4 text-black">Ссылки</h2>
                     <?foreach($arResult["DISPLAY_PROPERTIES"]['LINK']['VALUE'] as $value):?>
                         <p> <a href="<?=$value?>"> <?= $value ?> </a> </p>
                     <? endforeach?>
 
+                    <? endif; ?>
 
                 </div>
             </div>
