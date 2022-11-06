@@ -23,8 +23,7 @@ $APPLICATION->SetTitle("Личный кабинет покупателя");
 		"USER_PROPERTY" => array(),
 		"USER_VAR" => ""
 	)
-);?><br>
- </b><br>
+);?>
  <b style="color: #333333;"><?$APPLICATION->IncludeComponent(
 	"bitrix:subscribe.form",
 	"",

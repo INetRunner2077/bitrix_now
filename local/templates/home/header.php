@@ -88,6 +88,37 @@ IncludeTemplateLangFile(__FILE__);
                     </p>
                 </div>
                 <div class="col-6 col-md-6 text-right">
+
+                    <?
+                    global $USER;
+                    if ($USER->IsAuthorized()){
+
+                        $groupID_pokup = 6; # ID группы покупателя
+                        $groupID_prodav = 7; # ID группы продавца
+
+                        if (in_array($groupID_pokup,$USER->GetUserGroupArray())){
+                            echo '<h5> <a href="/lichnyy-kabinet-pokupatelya">'.$USER->GetLogin().'</a> </h5>';
+                            ?>
+                            <a href="/?logout=yes&<?=bitrix_sessid_get()?>">
+                                Выйти
+                            </a>
+                           <?
+                        }
+
+                        if (in_array($groupID_prodav,$USER->GetUserGroupArray())){
+                            echo '<h5> <a href="/lichnyy-kabinet-prodavtsa">'.$USER->GetLogin().'</a> </h5>';
+                            ?>
+                            <a href="/?logout=yes&<?=bitrix_sessid_get()?>">
+                                Выйти
+                            </a>
+                            <?
+                        }
+                    }
+                    else{
+                        echo '<h4> <a href="/test.php">Войти</a> </h4>';
+                    }
+                    ?>
+
                     <?$APPLICATION->IncludeComponent(
                         "bitrix:main.include",
                         "",
