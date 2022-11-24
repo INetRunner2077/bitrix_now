@@ -1,43 +1,50 @@
 <?
 $aMenuLinks = Array(
 	Array(
-		"Главная", 
-		"/", 
+		"Компания", 
+		"company/", 
 		Array(), 
-		Array(), 
-		"" 
-	),
-	Array(
-		"Обьявления", 
-		"/obyavleniya.php", 
-		Array(), 
-		Array(), 
-		"" 
-	),
-	Array(
-		"О сервисе", 
-		"/o-servise/", 
-		Array(), 
-		Array(), 
+		Array("DESCRIPTION"=>"это текст для пункта \"Компания\""), 
 		"" 
 	),
 	Array(
 		"Новости", 
-		"/o-servise/novosti/", 
+		"news/", 
 		Array(), 
 		Array(), 
 		"" 
 	),
 	Array(
-		"Личный кабинет покупателя", 
-		"/lichnyy-kabinet-pokupatelya/", 
+		"Продукция", 
+		"products/", 
 		Array(), 
 		Array(), 
 		"" 
 	),
 	Array(
-		"Личный кабинет продавца", 
-		"/lichnyy-kabinet-prodavtsa/", 
+		"Услуги", 
+		"services/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Контакты", 
+		"contacts/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Отзывы", 
+		"/otzyvy/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"поиск", 
+		"/search/", 
 		Array(), 
 		Array(), 
 		"" 

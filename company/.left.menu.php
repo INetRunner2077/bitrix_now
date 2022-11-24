@@ -1,9 +1,8 @@
-<?if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();?>
 <?
 $aMenuLinks = Array(
 	Array(
 		"О компании", 
-		"./", 
+		"/company/", 
 		Array(), 
 		Array(), 
 		"" 
@@ -20,7 +19,7 @@ $aMenuLinks = Array(
 		"mission.php", 
 		Array(), 
 		Array(), 
-		"" 
+		"\$USER->IsAuthorized()" 
 	),
 	Array(
 		"История", 
@@ -34,6 +33,13 @@ $aMenuLinks = Array(
 		"vacancies.php", 
 		Array(), 
 		Array(), 
+		"" 
+	),
+	Array(
+		"моё", 
+		"/company/zhir/", 
+		Array(), 
+		Array("DESCRIPTION"=>"Это для моё"), 
 		"" 
 	)
 );

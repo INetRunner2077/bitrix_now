@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="97abb6d7-3426-40ef-a2e0-7813ffec55d0" name="https://study27.local.mcart.ru">
+        <fileTransfer rootFolder="/home/bitrix/www" accessType="SFTP" host="study27.local.mcart.ru" port="7727" sshConfigId="934e60c9-1b36-4c2b-a3c8-eeeedbca39a9" sshConfig="developer@study27.local.mcart.ru:7727 key" keyPair="true">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" keepAliveTimeout="0" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="SshConfigs">
+    <configs>
+      <sshConfig host="study27.local.mcart.ru" id="934e60c9-1b36-4c2b-a3c8-eeeedbca39a9" keyPath="C:\Users\Данил\Desktop\privatekey.ppk" port="7727" nameFormat="DESCRIPTIVE" username="developer" />
+    </configs>
+  </component>
+</project>

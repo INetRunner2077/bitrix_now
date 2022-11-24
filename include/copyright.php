@@ -1,10 +1,5 @@
-<div class="row pt-5 mt-5 text-center">
-    <div class="col-md-12">
-        <p>
-            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-            Copyright &copy;</script><script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart text-danger" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank" >Colorlib</a>
-            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-        </p>
-    </div>
-
-</div>
+<p>© 2001-2014 «Название компании»</p>
+ 
+<p>Проспект Мира, 35, строение 2, офис 34</p>
+ 
+<p><b>Телефон: (495) 212-85-06</b></p>
