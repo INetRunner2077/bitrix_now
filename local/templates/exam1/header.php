@@ -31,7 +31,6 @@ IncludeTemplateLangFile(__FILE__);
                 <div class="main-phone-block">
                     <?
                     $time = date("H");
-                    $time = 9;
                     if($time>=9 && $time<18) {
 
                         echo '<a href="tel:84952128506" class="phone">8 (495) 212-85-06</a>';

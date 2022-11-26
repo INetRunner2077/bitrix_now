@@ -133,7 +133,7 @@ IncludeTemplateLangFile(__FILE__);
                     <div class="cnt">
                     <? if($APPLICATION->GetCurPage() != '/exam/'): ?>
                         <header>
-                            <h1><? $APPLICATION->ShowTITLE(); ?></h1>
+                            <h1><? $APPLICATION->ShowTitle(); ?></h1>
                         </header>
                         <? endif; ?>
 
