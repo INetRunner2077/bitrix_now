@@ -82,7 +82,7 @@ IncludeTemplateLangFile(__FILE__);
 		"MENU_CACHE_GET_VARS" => array(
 		),
 		"MENU_CACHE_TIME" => "3600",
-		"MENU_CACHE_TYPE" => "N",
+		"MENU_CACHE_TYPE" => "Y",
 		"MENU_CACHE_USE_GROUPS" => "Y",
 		"ROOT_MENU_TYPE" => "top",
 		"USE_EXT" => "Y",
@@ -120,7 +120,7 @@ IncludeTemplateLangFile(__FILE__);
                     <div class="cnt">
                     <? if($APPLICATION->GetCurPage() != '/exam3/'): ?>
                         <header>
-                            <h1><? $APPLICATION->ShowTITLE(); ?></h1>
+                            <h1><? $APPLICATION->ShowTitle(false); ?></h1>
                         </header>
                         <? endif; ?>
 

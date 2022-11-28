@@ -19,7 +19,6 @@ else
     $img = SITE_TEMPLATE_PATH.'/img/no_photo.jpg';
     ?>
 
-
 <hr>
 <div class="review-block">
     <div class="review-text">
@@ -33,24 +32,33 @@ else
     <div style="clear: both;" class="review-img-wrap"><img src="<?=$img?>" alt="<?=$arResult["DETAIL_PICTURE"]["ALT"]?>"></div>
 </div>
 
+
 <? if($arResult['PROPERTIES']['FILE']['VALUE'] > 0): ?>
 
 <div class="exam-review-doc">
     <p>Документы:</p>
-        <?
-        foreach ($arResult['PROPERTIES']['FILE']['VALUE'] as $idFile):
 
-        $srcFile = CFILE::GetPath($idFile);
-        $obFile  = CFILE::GetByID($idFile);
-        $arFile = $obFile->Fetch();
-
-        ?>
+    <? if($arResult["DISPLAY_PROPERTIES"]['FILE']['FILE_VALUE']['SRC'] != null): ?>
     <div
-            class="exam-review-item-doc"><img class="rew-doc-ico" src="<?= SITE_TEMPLATE_PATH ?>/img/icons/pdf_ico_40.png"><a href="<?=$srcFile?>"><?=$arFile['ORIGINAL_NAME']?></a>
+            class="exam-review-item-doc"><img class="rew-doc-ico" src="<?= SITE_TEMPLATE_PATH ?>/img/icons/pdf_ico_40.png"><a href="<?=$arResult["DISPLAY_PROPERTIES"]['FILE']['FILE_VALUE']['SRC'];?>"><?=$arResult["DISPLAY_PROPERTIES"]['FILE']['FILE_VALUE']['ORIGINAL_NAME']?></a>
     </div>
-        <? endforeach; ?>
+
+    <? else: ?>
+
+    <?foreach($arResult["DISPLAY_PROPERTIES"]['FILE']['FILE_VALUE'] as $pid=>$arProperty):?>
+        <div
+              ччс  class="exam-review-item-doc"><img class="rew-doc-ico" src="<?= SITE_TEMPLATE_PATH ?>/img/icons/pdf_ico_40.png"><a href="<?=$arProperty['SRC'];?>"><?=$arProperty['ORIGINAL_NAME']?></a>
+        </div>
+
+<?endforeach?>
+
+    <? endif; ?>
+
+
+    
 </div>
 
 <? endif; ?>
+
 
 <hr>

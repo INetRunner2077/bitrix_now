@@ -19,7 +19,7 @@ $aMenuLinks = Array(
 		"mission.php", 
 		Array(), 
 		Array(), 
-		"\$USER->IsAuthorized()" 
+		"CSite::InGroup(array(1,6,7,5))" 
 	),
 	Array(
 		"История", 
