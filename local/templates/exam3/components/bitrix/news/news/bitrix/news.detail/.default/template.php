@@ -40,14 +40,14 @@ else
 
         <? if($arResult["DISPLAY_PROPERTIES"]['FILE']['FILE_VALUE']['SRC'] != null): ?>
             <div
-                    class="exam-review-item-doc"><img class="rew-doc-ico" src="<?= SITE_TEMPLATE_PATH ?>/img/icons/pdf_ico_40.png"><a href="<?=$arResult["DISPLAY_PROPERTIES"]['FILE']['FILE_VALUE']['SRC'];?>"><?=$arResult["DISPLAY_PROPERTIES"]['FILE']['FILE_VALUE']['ORIGINAL_NAME']?></a>
+                    class="exam-review-item-doc"><img class="rew-doc-ico" src="<?= SITE_TEMPLATE_PATH ?>/img/icons/pdf_ico_40.png"><a href="<?=$arResult["DISPLAY_PROPERTIES"]['FILE']['FILE_VALUE']['SRC'];?>" download><?=$arResult["DISPLAY_PROPERTIES"]['FILE']['FILE_VALUE']['ORIGINAL_NAME']?></a>
             </div>
 
         <? else: ?>
 
             <?foreach($arResult["DISPLAY_PROPERTIES"]['FILE']['FILE_VALUE'] as $pid=>$arProperty):?>
                 <div
-                        ччс  class="exam-review-item-doc"><img class="rew-doc-ico" src="<?= SITE_TEMPLATE_PATH ?>/img/icons/pdf_ico_40.png"><a href="<?=$arProperty['SRC'];?>"><?=$arProperty['ORIGINAL_NAME']?></a>
+                        ччс  class="exam-review-item-doc"><img class="rew-doc-ico" src="<?= SITE_TEMPLATE_PATH ?>/img/icons/pdf_ico_40.png"><a href="<?=$arProperty['SRC'];?>" download><?=$arProperty['ORIGINAL_NAME']?></a>
                 </div>
 
             <?endforeach?>
